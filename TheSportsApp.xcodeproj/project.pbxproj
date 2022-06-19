@@ -9,23 +9,37 @@
 /* Begin PBXBuildFile section */
 		9B783CAE285F71D300F9A544 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B783CAD285F71D300F9A544 /* AppDelegate.swift */; };
 		9B783CB0285F71D300F9A544 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B783CAF285F71D300F9A544 /* SceneDelegate.swift */; };
-		9B783CB2285F71D300F9A544 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B783CB1285F71D300F9A544 /* ViewController.swift */; };
 		9B783CB5285F71D300F9A544 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B783CB3285F71D300F9A544 /* Main.storyboard */; };
 		9B783CB8285F71D300F9A544 /* TheSportsApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9B783CB6285F71D300F9A544 /* TheSportsApp.xcdatamodeld */; };
 		9B783CBA285F71D400F9A544 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B783CB9285F71D400F9A544 /* Assets.xcassets */; };
 		9B783CBD285F71D400F9A544 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B783CBB285F71D400F9A544 /* LaunchScreen.storyboard */; };
+		9B783CC7285F7E9400F9A544 /* SportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B783CC6285F7E9400F9A544 /* SportsViewController.swift */; };
+		9B783CCA285F80C000F9A544 /* SportsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B783CC8285F80C000F9A544 /* SportsCollectionViewCell.swift */; };
+		9B783CCB285F80C000F9A544 /* SportsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B783CC9285F80C000F9A544 /* SportsCollectionViewCell.xib */; };
+		9B783CCD285F910700F9A544 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B783CCC285F910700F9A544 /* NetworkManager.swift */; };
+		9B783CCF285F927B00F9A544 /* SportsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B783CCE285F927B00F9A544 /* SportsModel.swift */; };
+		9B783CD1285F994A00F9A544 /* Urls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B783CD0285F994A00F9A544 /* Urls.swift */; };
+		9B783CD3285F9B3900F9A544 /* ApiServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B783CD2285F9B3900F9A544 /* ApiServices.swift */; };
+		9B783CD5285F9E6900F9A544 /* JsonDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B783CD4285F9E6900F9A544 /* JsonDecoder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9B783CAA285F71D300F9A544 /* TheSportsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheSportsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B783CAD285F71D300F9A544 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B783CAF285F71D300F9A544 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9B783CB1285F71D300F9A544 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9B783CB4285F71D300F9A544 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9B783CB7285F71D300F9A544 /* TheSportsApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TheSportsApp.xcdatamodel; sourceTree = "<group>"; };
 		9B783CB9285F71D400F9A544 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B783CBC285F71D400F9A544 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B783CBE285F71D400F9A544 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B783CC6285F7E9400F9A544 /* SportsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsViewController.swift; sourceTree = "<group>"; };
+		9B783CC8285F80C000F9A544 /* SportsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsCollectionViewCell.swift; sourceTree = "<group>"; };
+		9B783CC9285F80C000F9A544 /* SportsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SportsCollectionViewCell.xib; sourceTree = "<group>"; };
+		9B783CCC285F910700F9A544 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		9B783CCE285F927B00F9A544 /* SportsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsModel.swift; sourceTree = "<group>"; };
+		9B783CD0285F994A00F9A544 /* Urls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Urls.swift; sourceTree = "<group>"; };
+		9B783CD2285F9B3900F9A544 /* ApiServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServices.swift; sourceTree = "<group>"; };
+		9B783CD4285F9E6900F9A544 /* JsonDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonDecoder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,12 +74,19 @@
 			children = (
 				9B783CAD285F71D300F9A544 /* AppDelegate.swift */,
 				9B783CAF285F71D300F9A544 /* SceneDelegate.swift */,
-				9B783CB1285F71D300F9A544 /* ViewController.swift */,
+				9B783CC6285F7E9400F9A544 /* SportsViewController.swift */,
 				9B783CB3285F71D300F9A544 /* Main.storyboard */,
 				9B783CB9285F71D400F9A544 /* Assets.xcassets */,
 				9B783CBB285F71D400F9A544 /* LaunchScreen.storyboard */,
 				9B783CBE285F71D400F9A544 /* Info.plist */,
 				9B783CB6285F71D300F9A544 /* TheSportsApp.xcdatamodeld */,
+				9B783CC8285F80C000F9A544 /* SportsCollectionViewCell.swift */,
+				9B783CC9285F80C000F9A544 /* SportsCollectionViewCell.xib */,
+				9B783CD2285F9B3900F9A544 /* ApiServices.swift */,
+				9B783CCC285F910700F9A544 /* NetworkManager.swift */,
+				9B783CCE285F927B00F9A544 /* SportsModel.swift */,
+				9B783CD0285F994A00F9A544 /* Urls.swift */,
+				9B783CD4285F9E6900F9A544 /* JsonDecoder.swift */,
 			);
 			path = TheSportsApp;
 			sourceTree = "<group>";
@@ -131,6 +152,7 @@
 				9B783CBD285F71D400F9A544 /* LaunchScreen.storyboard in Resources */,
 				9B783CBA285F71D400F9A544 /* Assets.xcassets in Resources */,
 				9B783CB5285F71D300F9A544 /* Main.storyboard in Resources */,
+				9B783CCB285F80C000F9A544 /* SportsCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,8 +163,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B783CB2285F71D300F9A544 /* ViewController.swift in Sources */,
+				9B783CD1285F994A00F9A544 /* Urls.swift in Sources */,
+				9B783CD5285F9E6900F9A544 /* JsonDecoder.swift in Sources */,
+				9B783CCF285F927B00F9A544 /* SportsModel.swift in Sources */,
+				9B783CCA285F80C000F9A544 /* SportsCollectionViewCell.swift in Sources */,
+				9B783CD3285F9B3900F9A544 /* ApiServices.swift in Sources */,
 				9B783CAE285F71D300F9A544 /* AppDelegate.swift in Sources */,
+				9B783CCD285F910700F9A544 /* NetworkManager.swift in Sources */,
+				9B783CC7285F7E9400F9A544 /* SportsViewController.swift in Sources */,
 				9B783CB8285F71D300F9A544 /* TheSportsApp.xcdatamodeld in Sources */,
 				9B783CB0285F71D300F9A544 /* SceneDelegate.swift in Sources */,
 			);
