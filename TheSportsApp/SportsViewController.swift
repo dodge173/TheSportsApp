@@ -9,9 +9,10 @@ import UIKit
 
 class SportsViewController: UIViewController {
     
+    var sports = [SportsModel]()
+    let sportsViewModel = SportsViewModel()
     @IBOutlet weak var sportsCollectionView: UICollectionView!
     
-    var array = ["Football","Tennis","Basketball","VolleyBall","Golf","Cricket"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,56 +21,54 @@ class SportsViewController: UIViewController {
         sportsCollectionView.dataSource=self
         sportsCollectionView.register(UINib(nibName: "SportsCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: "SportsCollectionViewCell")
         // Do any additional setup after loading the view.
-        fetchSports()
+        fetch()
     
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-}
-
-func fetchSports() {
-    Task.init {
-        if let sports = try? await NetworkManager.shared.fetchSports(endPoint: "api/v1/json/2/all_sports.php", SportsAppModel: Sports.self) {
-            print(sports)
-        } else {
-            print("error")
+    func fetch() {
+        Task.init {
+            if let sports = await sportsViewModel.fetch() {
+                self.sports = sports
+                DispatchQueue.main.async {
+                    self.sportsCollectionView.reloadData()
+                }
+            } else {
+                print("error")
+            }
         }
     }
-}
-
-
-
+  }
 extension SportsViewController: UICollectionViewDelegate {
     
 }
 
 extension SportsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(array.count)
-        return array.count
+        return sports.count
         
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = sportsCollectionView.dequeueReusableCell(withReuseIdentifier: "SportsCollectionViewCell", for: indexPath)   as! SportsCollectionViewCell
-        cell.strSport.text=array[indexPath.row]
-        cell.backgroundColor = .blue
+        cell.strSport.text = sports[indexPath.row].strSport
+        cell.strSportThumb.downloaded(from: sports[indexPath.row].strSportThumb)
+        cell.backgroundColor = .lightGray
+        cell.strSportThumb.layer.borderWidth = 0.125
+                cell.strSportThumb.layer.masksToBounds = false
+                cell.strSportThumb.layer.borderColor = UIColor.black.cgColor
+                cell.strSportThumb.layer.cornerRadius = cell.strSportThumb.frame.height/2
+                cell.strSportThumb.clipsToBounds = true
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 5
+        return 1
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 1
+    }
     
 }
 
@@ -79,7 +78,7 @@ extension SportsViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
     {
-        let leftAndRightPaddings: CGFloat = 5
+        let leftAndRightPaddings: CGFloat = 1
         let numberOfItemsPerRow: CGFloat = 2.0
     
         let width = (collectionView.frame.width-leftAndRightPaddings)/numberOfItemsPerRow

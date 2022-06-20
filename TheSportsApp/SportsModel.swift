@@ -8,8 +8,11 @@
 import Foundation
 
 struct Sports: Codable {
+    
     let sports: [SportsModel]
+
 }
+
 
 struct SportsModel: Codable {
     
