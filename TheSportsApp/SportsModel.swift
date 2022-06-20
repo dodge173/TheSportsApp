@@ -19,3 +19,4 @@ struct SportsModel: Codable {
     let strSport: String
     let strSportThumb: String
 }
+

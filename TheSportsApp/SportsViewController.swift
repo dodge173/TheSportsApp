@@ -38,7 +38,17 @@ class SportsViewController: UIViewController {
         }
     }
   }
+
 extension SportsViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        
+        let sports = sports[indexPath.row]
+        let vc = UIStoryboard(name: "LeaguesStoryboard", bundle: .main).instantiateViewController(withIdentifier: "LeaguesViewController") as! LeaguesViewController
+        vc.league = sports
+        collectionView.deselectItem(at: indexPath, animated: true)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
 }
 
@@ -70,6 +80,9 @@ extension SportsViewController: UICollectionViewDataSource {
         return 1
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+    }
 }
 
 extension SportsViewController: UICollectionViewDelegateFlowLayout {
