@@ -9,9 +9,13 @@ import UIKit
 
 class LeaguesViewController: UIViewController {
 
+    var leagueNames :String?
     var leagues = [LeaguesModel]()
     let leaguesViewModel = LeaguesViewModel()
     var league: SportsModel?
+    var leagueArray = [LeaguesModel]()
+    
+    
     @IBOutlet weak var leaguesTableView: UITableView!
     
     override func viewDidLoad() {
@@ -25,7 +29,7 @@ class LeaguesViewController: UIViewController {
     
     func fetch() {
         Task.init {
-            if let leagues = await leaguesViewModel.fetch() {
+            if let leagues = await leaguesViewModel.fetchLeagues() {
                 self.leagues = leagues
                 DispatchQueue.main.async {
                     self.leaguesTableView.reloadData()
@@ -41,22 +45,39 @@ extension LeaguesViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        let data = leagueArray[indexPath.row]
+        let vc = UIStoryboard(name: "LeagueDetailsStoryBoard", bundle: .main).instantiateViewController(withIdentifier: "LeagueDetailsViewController") as! LeagueDetailsViewController
+        vc.leagueDetails = data
+        
+        
+        
     }
 }
 
 extension LeaguesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return leagues.count
+        return leagueArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = leaguesTableView.dequeueReusableCell(withIdentifier: "LeaguesTableViewCell", for: indexPath)   as! LeaguesTableViewCell
-        cell.strLeague.text = leagues[indexPath.row].strLeague
-        cell.strSport.text = leagues[indexPath.row].strSport
-        cell.backgroundColor = .lightGray
+        cell.strLeague.text = leagueArray[indexPath.row].strLeague
+        cell.strSport.text = leagueArray[indexPath.row].strSport
+        
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        for item in leagues {
+            if item.strSport == leagueNames {
+                leagueArray.append(item)
+                leaguesTableView.reloadData()
+            }
+        }
+       
+    }
+  
 }

@@ -27,7 +27,7 @@ class SportsViewController: UIViewController {
     
     func fetch() {
         Task.init {
-            if let sports = await sportsViewModel.fetch() {
+            if let sports = await sportsViewModel.fetchSports() {
                 self.sports = sports
                 DispatchQueue.main.async {
                     self.sportsCollectionView.reloadData()
@@ -36,18 +36,20 @@ class SportsViewController: UIViewController {
                 print("error")
             }
         }
-    }
+     }
   }
 
 extension SportsViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         
-        let sports = sports[indexPath.row]
+        let sport = sports[indexPath.row]
         let vc = UIStoryboard(name: "LeaguesStoryboard", bundle: .main).instantiateViewController(withIdentifier: "LeaguesViewController") as! LeaguesViewController
-        vc.league = sports
+        vc.league = sport
+        vc.leagueNames = sports[indexPath.row].strSport
         collectionView.deselectItem(at: indexPath, animated: true)
         self.navigationController?.pushViewController(vc, animated: true)
+        
     }
     
 }
@@ -64,11 +66,9 @@ extension SportsViewController: UICollectionViewDataSource {
         cell.strSport.text = sports[indexPath.row].strSport
         cell.strSportThumb.downloaded(from: sports[indexPath.row].strSportThumb)
         cell.backgroundColor = .lightGray
-        cell.strSportThumb.layer.borderWidth = 0.125
-                cell.strSportThumb.layer.masksToBounds = false
-                cell.strSportThumb.layer.borderColor = UIColor.black.cgColor
-                cell.strSportThumb.layer.cornerRadius = cell.strSportThumb.frame.height/2
-                cell.strSportThumb.clipsToBounds = true
+        cell.strSportThumb.layer.masksToBounds = true
+        cell.strSportThumb.layer.cornerRadius =  cell.strSportThumb.frame.height/2
+        cell.strSportThumb.clipsToBounds = true
         return cell
     }
     

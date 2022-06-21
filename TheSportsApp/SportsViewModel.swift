@@ -14,8 +14,8 @@ class SportsViewModel {
         self.apiService = apiService
     }
     
-    func fetch() async -> [SportsModel]? {
-        let sports = try? await apiService.fetchSports(endPoint: "api/v1/json/2/all_sports.php", SportsAppModel: Sports.self)
+    func fetchSports() async -> [SportsModel]? {
+        let sports = try? await apiService.fetch(endPoint: "api/v1/json/2/all_sports.php", SportsAppModel: Sports.self)
         return sports?.sports
     }
     
