@@ -20,8 +20,8 @@
                                 <rect key="frame" x="0.0" y="89" width="414" height="773"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Jo-zB-0KS">
-                                <rect key="frame" x="15" y="31" width="61" height="33"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Jo-zB-0KS">
+                                <rect key="frame" x="15" y="41" width="41" height="33"/>
                                 <color key="backgroundColor" systemColor="systemGray2Color"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -34,7 +34,7 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="sVk-bA-SIA" firstAttribute="top" secondItem="9Jo-zB-0KS" secondAttribute="bottom" constant="25" id="28i-ZP-tbc"/>
+                            <constraint firstItem="sVk-bA-SIA" firstAttribute="top" secondItem="9Jo-zB-0KS" secondAttribute="bottom" constant="15" id="28i-ZP-tbc"/>
                             <constraint firstItem="9Jo-zB-0KS" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="15" id="8WZ-k7-g7p"/>
                             <constraint firstItem="sVk-bA-SIA" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="45" id="Fzu-Rb-HAT"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="sVk-bA-SIA" secondAttribute="bottom" id="JV3-Tl-H30"/>
