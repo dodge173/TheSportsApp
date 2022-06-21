@@ -38,6 +38,7 @@ extension LeagueDetailsTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = leagueDetailsCollectionInTableViewCell.dequeueReusableCell(withReuseIdentifier: "UpcomingEventsCollectionViewCell", for: indexPath) as!  UpcomingEventsCollectionViewCell
+        
         cell.strEvent.text="ChampiosLeagueFinal"
         cell.dateEvent.text="12th of September/2022"
         cell.timeEvent.text="07:51 pm"
