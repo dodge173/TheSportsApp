@@ -22,7 +22,7 @@ class LeagueDetailsViewModel {
         }
     
     func fetchLatestResults() async -> [LatestResultsModel]? {
-        let latestResults = try? await apiService.fetch(endPoint: "api/v1/json/2/eventsseason.php?id=4328&s=2022-2023", SportsAppModel: LatestResults.self)
+        let latestResults = try? await apiService.fetch(endPoint: "api/v1/json/2/eventsseason.php?id=4617", SportsAppModel: LatestResults.self)
         return latestResults?.events
     }
     
