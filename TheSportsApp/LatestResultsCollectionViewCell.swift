@@ -9,8 +9,11 @@ import UIKit
 
 class LatestResultsCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var firstTeamVsSecondTeamLAbel: UILabel!
-    @IBOutlet weak var firstScoreVsSecondScore: UILabel!
+    
+    @IBOutlet weak var homeTeamLabel: UILabel!
+    @IBOutlet weak var secondTeamLabel: UILabel!
+    @IBOutlet weak var firstTeamScore: UILabel!
+    @IBOutlet weak var secondTeamScore: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     

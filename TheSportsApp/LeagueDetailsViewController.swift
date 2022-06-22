@@ -8,7 +8,7 @@
 import UIKit
 
 class LeagueDetailsViewController: UIViewController {
-    
+   
     @IBAction func backBtn(_ sender: UIButton) {
         dismiss(animated: true)
     }
@@ -22,8 +22,10 @@ class LeagueDetailsViewController: UIViewController {
         leagueDetailsTableView.register(UINib(nibName: "LeagueDetailsTableViewCell", bundle: .main), forCellReuseIdentifier: "LeagueDetailsTableViewCell")
         leagueDetailsTableView.register(UINib(nibName: "LatestResultsTableViewCell", bundle: .main), forCellReuseIdentifier: "LatestResultsTableViewCell")
         leagueDetailsTableView.register(UINib(nibName: "TeamsTableViewCell", bundle: .main), forCellReuseIdentifier: "TeamsTableViewCell")
-        
     }
+    
+
+   
 }
 
 extension LeagueDetailsViewController: UITableViewDelegate {
@@ -41,6 +43,7 @@ extension LeagueDetailsViewController: UITableViewDataSource {
         if indexPath.row == 0  {
             
             let cell = leagueDetailsTableView.dequeueReusableCell(withIdentifier: "LeagueDetailsTableViewCell", for: indexPath)   as! LeagueDetailsTableViewCell
+            
             return cell
         }
         
@@ -55,6 +58,6 @@ extension LeagueDetailsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 250
+        return 240
     }
 }
