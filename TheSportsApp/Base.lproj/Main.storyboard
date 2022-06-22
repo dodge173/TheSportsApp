@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jiU-6D-DEd">
-                                <rect key="frame" x="10" y="98" width="394" height="705"/>
+                                <rect key="frame" x="10" y="150" width="394" height="653"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="AIh-j9-xsh">
                                     <size key="itemSize" width="128" height="128"/>
@@ -50,12 +50,38 @@
         <!--Favorites-->
         <scene sceneID="Lum-RA-98j">
             <objects>
-                <viewController id="YX8-Lb-Jrj" sceneMemberID="viewController">
+                <viewController id="YX8-Lb-Jrj" customClass="FavoritesViewController" customModule="TheSportsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WAs-OB-Svt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="D3P-cu-9Nk">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="k57-MP-1cf">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="k57-MP-1cf" id="3Zi-8A-HGn">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="YX8-Lb-Jrj" id="GAz-uy-pF1"/>
+                                    <outlet property="delegate" destination="YX8-Lb-Jrj" id="lMS-0B-sVj"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="9Fu-sD-STt"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9Fu-sD-STt" firstAttribute="bottom" secondItem="D3P-cu-9Nk" secondAttribute="bottom" id="E2l-YR-vmd"/>
+                            <constraint firstItem="9Fu-sD-STt" firstAttribute="trailing" secondItem="D3P-cu-9Nk" secondAttribute="trailing" id="MrA-OV-4L1"/>
+                            <constraint firstItem="D3P-cu-9Nk" firstAttribute="leading" secondItem="9Fu-sD-STt" secondAttribute="leading" id="fNb-vQ-TLE"/>
+                            <constraint firstItem="D3P-cu-9Nk" firstAttribute="top" secondItem="9Fu-sD-STt" secondAttribute="top" id="pG2-zh-Tiq"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Favorites" id="mhY-gG-vmW">
                         <imageReference key="image" image="star.fill" catalog="system" symbolScale="large" renderingMode="hierarchical-single">
@@ -68,6 +94,9 @@
                         <color key="badgeColor" systemColor="labelColor"/>
                     </tabBarItem>
                     <navigationItem key="navigationItem" id="vp9-oy-b0r"/>
+                    <connections>
+                        <outlet property="favoritesTableView" destination="D3P-cu-9Nk" id="DTT-pm-Zwv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WPO-in-Ers" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -102,8 +131,8 @@
                         <color key="badgeColor" systemColor="labelColor"/>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ags-j8-sTg">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="ags-j8-sTg">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

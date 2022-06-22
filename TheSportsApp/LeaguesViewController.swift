@@ -48,6 +48,7 @@ extension LeaguesViewController: UITableViewDelegate {
         let data = leagueArray[indexPath.row]
         let vc = UIStoryboard(name: "LeagueDetailsStoryBoard", bundle: .main).instantiateViewController(withIdentifier: "LeagueDetailsViewController") as! LeagueDetailsViewController
         vc.modalPresentationStyle = .fullScreen
+        vc.leagueDetails = data
         self.present(vc, animated: true)
         
     }
