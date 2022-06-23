@@ -17,3 +17,6 @@ class TeamsCollectionViewCell: UICollectionViewCell {
     }
 
 }
+
+
+

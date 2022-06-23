@@ -54,6 +54,8 @@ class LeagueDetailsViewController: UIViewController {
 extension LeagueDetailsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         leagueDetailsTableView.deselectRow(at: indexPath, animated: true)
+        
+        
     }
 }
 

@@ -44,6 +44,10 @@ class TeamsTableViewCell: UITableViewCell {
 
 extension TeamsTableViewCell: UICollectionViewDelegate {
     
+   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+   }
+    
 }
 
 extension TeamsTableViewCell: UICollectionViewDataSource {
