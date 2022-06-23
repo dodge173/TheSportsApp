@@ -25,19 +25,16 @@ class LeagueDetailsViewController: UIViewController {
     @IBOutlet weak var leaguename: UILabel!
     @IBAction func favoriteBtn(_ sender: UIButton) {
         
-        if favoriteBtn.titleLabel?.text == " " {
-            
+        if Favorites(context: context).leagueName != leagueDetails?.strLeague  {
             Favorites(context: self.context).leagueName = leagueDetails?.strLeague
             do {
                 try self.context.save()
-                favoriteBtn.setTitle("   ", for: .normal)
                 favoriteBtn.setImage(UIImage(systemName: "bookmark.fill"), for: .normal)
             } catch {
                 print("Error")
             }
-            //
-        } else {
-            favoriteBtn.setImage(UIImage(systemName: "bookmark"), for: .normal)
+        } else if Favorites(context: context).leagueName == leaguename.text {
+            favoriteBtn.setImage(UIImage(systemName: "bookmarkr"), for: .normal)
         }
     }
     
@@ -50,8 +47,18 @@ class LeagueDetailsViewController: UIViewController {
         leagueDetailsTableView.register(UINib(nibName: "TeamsTableViewCell", bundle: .main), forCellReuseIdentifier: "TeamsTableViewCell")
         leaguename.text = leagueDetails?.strLeague
         GlobalNotificationCenter().nc.addObserver(self, selector: #selector(presentVC), name: Notification.Name("present"), object: nil)
-
+        
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if Favorites(context: context).leagueName == leagueDetails?.strLeague  {
+            favoriteBtn.setImage(UIImage(systemName: "bookmark.fill"), for: .normal)
+        } else if Favorites(context: context).leagueName != leaguename.text {
+            favoriteBtn.setImage(UIImage(systemName: "bookmarkr"), for: .normal)
+        }
+    }
+    
+    
     @objc func presentVC(_ sender: UITapGestureRecognizer? = nil) {
         
         let vc = UIStoryboard(name: "TeamDetailsStoryBoard", bundle: .main).instantiateViewController(withIdentifier: "TeamDetailsViewController") as! TeamDetailsViewController
