@@ -45,6 +45,8 @@ extension LeaguesViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        leaguesTableView.deselectRow(at: indexPath, animated: true)
+        
         let data = leagueArray[indexPath.row]
         let vc = UIStoryboard(name: "LeagueDetailsStoryBoard", bundle: .main).instantiateViewController(withIdentifier: "LeagueDetailsViewController") as! LeagueDetailsViewController
         vc.modalPresentationStyle = .fullScreen
@@ -62,12 +64,11 @@ extension LeaguesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = leaguesTableView.dequeueReusableCell(withIdentifier: "LeaguesTableViewCell", for: indexPath)   as! LeaguesTableViewCell
         cell.strLeague.text = leagueArray[indexPath.row].strLeague
-        cell.strSport.text = leagueArray[indexPath.row].strSport
         
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
+        return 70
     }
     
     override func viewDidAppear(_ animated: Bool) {

@@ -65,7 +65,7 @@ extension SportsViewController: UICollectionViewDataSource {
         let cell = sportsCollectionView.dequeueReusableCell(withReuseIdentifier: "SportsCollectionViewCell", for: indexPath)   as! SportsCollectionViewCell
         cell.strSport.text = sports[indexPath.row].strSport
         cell.strSportThumb.downloaded(from: sports[indexPath.row].strSportThumb)
-        cell.backgroundColor = .lightGray
+        cell.backgroundColor = .black
         cell.strSportThumb.layer.masksToBounds = true
         cell.strSportThumb.layer.cornerRadius =  cell.strSportThumb.frame.height/2
         cell.strSportThumb.clipsToBounds = true

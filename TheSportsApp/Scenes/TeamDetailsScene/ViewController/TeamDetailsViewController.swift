@@ -9,6 +9,8 @@ import UIKit
 
 class TeamDetailsViewController: UIViewController {
 
+    var teamDetails : TeamsModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
