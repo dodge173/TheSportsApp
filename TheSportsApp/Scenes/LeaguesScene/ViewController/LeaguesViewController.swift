@@ -9,6 +9,7 @@ import UIKit
 
 class LeaguesViewController: UIViewController {
 
+    
     var leagueNames :String?
     var leagues = [LeaguesModel]()
     let leaguesViewModel = LeaguesViewModel()
@@ -29,7 +30,7 @@ class LeaguesViewController: UIViewController {
     
     func fetch() {
         Task.init {
-            if let leagues = await leaguesViewModel.fetchLeagues() {
+            if let leagues = await leaguesViewModel.fetchLeagues(sportName: leagueNames ?? "") {
                 self.leagues = leagues
                 DispatchQueue.main.async {
                     self.leaguesTableView.reloadData()
@@ -47,23 +48,24 @@ extension LeaguesViewController: UITableViewDelegate {
         
         leaguesTableView.deselectRow(at: indexPath, animated: true)
         
-        let data = leagueArray[indexPath.row]
+        let data = leagues[indexPath.row]
         let vc = UIStoryboard(name: "LeagueDetailsStoryBoard", bundle: .main).instantiateViewController(withIdentifier: "LeagueDetailsViewController") as! LeagueDetailsViewController
         vc.modalPresentationStyle = .fullScreen
         vc.leagueDetails = data
+        vc.leagueID = leagues[indexPath.row].idLeague
         self.present(vc, animated: true)
-        
     }
 }
 
 extension LeaguesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return leagueArray.count
+        return leagues.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = leaguesTableView.dequeueReusableCell(withIdentifier: "LeaguesTableViewCell", for: indexPath)   as! LeaguesTableViewCell
-        cell.strLeague.text = leagueArray[indexPath.row].strLeague
+        cell.strLeague.text = leagues[indexPath.row].strLeague
+        
         
         return cell
     }
@@ -71,14 +73,14 @@ extension LeaguesViewController: UITableViewDataSource {
         return 70
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        for item in leagues {
-            if item.strSport == leagueNames {
-                leagueArray.append(item)
-                leaguesTableView.reloadData()
-            }
-        }
+   // override func viewDidAppear(_ animated: Bool) {
+    //    for item in leagues {
+     //       if item.strSport == leagueNames {
+      //          leagueArray.append(item)
+       //         leaguesTableView.reloadData()
+      //      }
+     //   }
        
-    }
+   // }
   
 }

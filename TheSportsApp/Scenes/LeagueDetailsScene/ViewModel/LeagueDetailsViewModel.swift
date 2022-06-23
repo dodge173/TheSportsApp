@@ -16,8 +16,8 @@ class LeagueDetailsViewModel {
         self.apiService = apiService
     }
     
-    func fetchUpcomingEvents() async -> [UpcomingEventsModel]? {
-        let upcomingEvents = try? await apiService.fetch(endPoint: "api/v1/json/2/eventsseason.php?id=4328&s=2022-2023", SportsAppModel: UpcomingEvents.self)
+    func fetchUpcomingEvents(leagueID: String) async -> [UpcomingEventsModel]? {
+        let upcomingEvents = try? await apiService.fetch(endPoint: "api/v1/json/2/eventsseason.php?id=\(leagueID)", SportsAppModel: UpcomingEvents.self)
         return upcomingEvents?.events
         }
     

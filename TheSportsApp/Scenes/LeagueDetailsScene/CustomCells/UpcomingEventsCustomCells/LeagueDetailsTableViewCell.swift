@@ -10,6 +10,7 @@ import UIKit
 class LeagueDetailsTableViewCell: UITableViewCell {
 
     
+    let leagueDetailsDelegate = LeagueDetailsViewController()
     let leagueDetailsViewModel = LeagueDetailsViewModel()
     @IBOutlet weak var leagueDetailsCollectionInTableViewCell: UICollectionView!
     var upcomingEvents = [UpcomingEventsModel]()
@@ -30,7 +31,8 @@ class LeagueDetailsTableViewCell: UITableViewCell {
     
     func fetch() {
         Task.init {
-            if let upcomingEvents = await leagueDetailsViewModel.fetchUpcomingEvents() {
+            if let upcomingEvents = await leagueDetailsViewModel.fetchUpcomingEvents(leagueID: leagueDetailsDelegate.leagueID ?? "")
+            {
                 self.upcomingEvents = upcomingEvents
                 DispatchQueue.main.async {
                     self.leagueDetailsCollectionInTableViewCell.reloadData()
@@ -73,7 +75,7 @@ extension LeagueDetailsTableViewCell: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 5
+        return 10
     }
 
 }

@@ -12,7 +12,6 @@ class TeamsTableViewCell: UITableViewCell {
     @IBOutlet weak var teamsCollectionView: UICollectionView!
     let leagueDetailsViewModel = LeagueDetailsViewModel()
     var teams = [TeamsModel]()
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -40,6 +39,8 @@ class TeamsTableViewCell: UITableViewCell {
             }
         }
     }
+    
+    
 }
 
 extension TeamsTableViewCell: UICollectionViewDelegate {
@@ -61,9 +62,7 @@ extension TeamsTableViewCell: UICollectionViewDataSource {
         let cell = teamsCollectionView.dequeueReusableCell(withReuseIdentifier: "TeamsCollectionViewCell", for: indexPath) as!  TeamsCollectionViewCell
         
       //  cell.teamImage.image=
-        cell.teamNameLabel.text=teams[indexPath.row].strTeam
-        
-        
+        cell.teamNameLabel.text = teams[indexPath.row].strTeam
         return cell
     }
     
@@ -89,5 +88,4 @@ extension TeamsTableViewCell: UICollectionViewDelegateFlowLayout {
     
     }
 }
-
 

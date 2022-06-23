@@ -217,7 +217,6 @@
 			children = (
 				9BB0710328649288009D3F62 /* ViewController */,
 				9BB071022864927C009D3F62 /* ViewModel */,
-				9BB0710128649274009D3F62 /* CustomCell */,
 				9BB071002864926C009D3F62 /* StoryBoards */,
 			);
 			path = LeaguesScene;
@@ -345,6 +344,7 @@
 		9BB0710D286493FA009D3F62 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9BB0710128649274009D3F62 /* CustomCell */,
 				9B783CCE285F927B00F9A544 /* SportsModel.swift */,
 				9B4EBD4E2860F75A00443900 /* LeaguesModel.swift */,
 				9BA8C1812863282300E0870D /* UpcomingEventsModel.swift */,

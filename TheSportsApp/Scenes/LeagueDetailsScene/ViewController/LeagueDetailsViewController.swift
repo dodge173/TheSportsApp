@@ -10,6 +10,7 @@ import CoreData
 
 class LeagueDetailsViewController: UIViewController {
     
+    var leagueID: String?
     var leagueDetails: LeaguesModel?
     var leagueDetailsViewModel = LeagueDetailsViewModel()
     var upcomingevents = [Favorites]()
@@ -48,6 +49,14 @@ class LeagueDetailsViewController: UIViewController {
         leagueDetailsTableView.register(UINib(nibName: "LatestResultsTableViewCell", bundle: .main), forCellReuseIdentifier: "LatestResultsTableViewCell")
         leagueDetailsTableView.register(UINib(nibName: "TeamsTableViewCell", bundle: .main), forCellReuseIdentifier: "TeamsTableViewCell")
         leaguename.text = leagueDetails?.strLeague
+        GlobalNotificationCenter().nc.addObserver(self, selector: #selector(presentVC), name: Notification.Name("present"), object: nil)
+
+    }
+    @objc func presentVC(_ sender: UITapGestureRecognizer? = nil) {
+        
+        let vc = UIStoryboard(name: "TeamDetailsStoryBoard", bundle: .main).instantiateViewController(withIdentifier: "TeamDetailsViewController") as! TeamDetailsViewController
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true)
     }
 }
 

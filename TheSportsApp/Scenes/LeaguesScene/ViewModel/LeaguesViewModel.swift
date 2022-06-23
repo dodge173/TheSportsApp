@@ -15,12 +15,15 @@ class LeaguesViewModel {
         self.apiService = apiService
     }
     
-    func fetchLeagues() async -> [LeaguesModel]? {
-        let leagues = try? await apiService.fetch(endPoint: "api/v1/json/2/all_leagues.php", SportsAppModel: Leagues.self)
-        return leagues?.leagues
+    func fetchLeagues(sportName: String) async -> [LeaguesModel]? {
+        let leagues = try? await apiService.fetch(endPoint: "api/v1/json/2/search_all_leagues.php?s=\(sportName)", SportsAppModel: Leagues.self)
+        return leagues?.countries
     }
     
 }
+
+
+
 
 
     

@@ -36,8 +36,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Jo-zB-0KS">
-                                <rect key="frame" x="15" y="85" width="41" height="33"/>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="sVk-bA-SIA" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="45" id="Fzu-Rb-HAT"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="sVk-bA-SIA" secondAttribute="bottom" id="JV3-Tl-H30"/>
+                            <constraint firstItem="sVk-bA-SIA" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Orp-TL-YHX"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="sVk-bA-SIA" secondAttribute="trailing" id="Y6d-gq-DGf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="cib-p2-KKF">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="vK7-R9-ywd">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="9Jo-zB-0KS">
+                                <rect key="frame" x="20" y="5.5" width="41" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGray2Color"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -46,19 +59,8 @@
                                     <action selector="BackBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="U4U-as-naR"/>
                                 </connections>
                             </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="sVk-bA-SIA" firstAttribute="top" secondItem="9Jo-zB-0KS" secondAttribute="bottom" constant="15" id="28i-ZP-tbc"/>
-                            <constraint firstItem="9Jo-zB-0KS" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="15" id="8WZ-k7-g7p"/>
-                            <constraint firstItem="sVk-bA-SIA" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="45" id="Fzu-Rb-HAT"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="sVk-bA-SIA" secondAttribute="bottom" id="JV3-Tl-H30"/>
-                            <constraint firstItem="sVk-bA-SIA" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Orp-TL-YHX"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="sVk-bA-SIA" secondAttribute="trailing" id="Y6d-gq-DGf"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="cib-p2-KKF"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="favoriteBtn" destination="JTl-sK-zX1" id="i9X-3T-OfM"/>
                         <outlet property="leagueDetailsTableView" destination="sVk-bA-SIA" id="1Ih-6I-jM7"/>
