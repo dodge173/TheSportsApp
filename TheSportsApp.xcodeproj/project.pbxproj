@@ -53,6 +53,8 @@
 		9BB0711C28649C04009D3F62 /* TeamDetailsStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BB0711B28649C04009D3F62 /* TeamDetailsStoryBoard.storyboard */; };
 		9BB0711E28649CF2009D3F62 /* TeamDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB0711D28649CF2009D3F62 /* TeamDetailsModel.swift */; };
 		9BDDEB7928663151004B3056 /* TeamDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDDEB7828663151004B3056 /* TeamDetailsViewModel.swift */; };
+		9BDDEB7E28665539004B3056 /* NetworkingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDDEB7D28665539004B3056 /* NetworkingIndicator.swift */; };
+		9BDDEB8028666F2F004B3056 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDDEB7F28666F2F004B3056 /* AppManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +106,8 @@
 		9BB0711B28649C04009D3F62 /* TeamDetailsStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TeamDetailsStoryBoard.storyboard; sourceTree = "<group>"; };
 		9BB0711D28649CF2009D3F62 /* TeamDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailsModel.swift; sourceTree = "<group>"; };
 		9BDDEB7828663151004B3056 /* TeamDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailsViewModel.swift; sourceTree = "<group>"; };
+		9BDDEB7D28665539004B3056 /* NetworkingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingIndicator.swift; sourceTree = "<group>"; };
+		9BDDEB7F28666F2F004B3056 /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +148,7 @@
 				9BB0710E28649432009D3F62 /* Utilities */,
 				9BB0710C286493E7009D3F62 /* Assets */,
 				9B783CBE285F71D400F9A544 /* Info.plist */,
+				9BDDEB7F28666F2F004B3056 /* AppManager.swift */,
 			);
 			path = TheSportsApp;
 			sourceTree = "<group>";
@@ -389,6 +394,7 @@
 			isa = PBXGroup;
 			children = (
 				9B783CCC285F910700F9A544 /* NetworkManager.swift */,
+				9BDDEB7D28665539004B3056 /* NetworkingIndicator.swift */,
 			);
 			path = NetworkManager;
 			sourceTree = "<group>";
@@ -544,6 +550,7 @@
 				9B4EBD452860D22B00443900 /* ImageViewExtensions.swift in Sources */,
 				9BA8C184286328B100E0870D /* LatestResultsModels.swift in Sources */,
 				9B4EBD512860F76900443900 /* LeaguesViewModel.swift in Sources */,
+				9BDDEB8028666F2F004B3056 /* AppManager.swift in Sources */,
 				9B783CCF285F927B00F9A544 /* SportsModel.swift in Sources */,
 				9BA8C186286328C600E0870D /* TeamsModel.swift in Sources */,
 				9B783CCA285F80C000F9A544 /* SportsCollectionViewCell.swift in Sources */,
@@ -563,6 +570,7 @@
 				9B4EBD432860C8B000443900 /* SportsViewModel.swift in Sources */,
 				9B8AC285286226BA00FEC2AD /* LeagueDetailsTableViewCell.swift in Sources */,
 				9B5CF0392863B6DF0086670B /* CoreDataManager.swift in Sources */,
+				9BDDEB7E28665539004B3056 /* NetworkingIndicator.swift in Sources */,
 				9BB0711A28649BE9009D3F62 /* TeamDetailsViewController.swift in Sources */,
 				9B783CB0285F71D300F9A544 /* SceneDelegate.swift in Sources */,
 			);

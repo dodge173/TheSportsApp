@@ -30,7 +30,7 @@ class LatestResultsTableViewCell: UITableViewCell {
     
     func fetch() {
         Task.init {
-            if let latestResults = await leagueDetailsViewModel.fetchLatestResults() {
+            if let latestResults = await leagueDetailsViewModel.fetchLatestResults(leagueID: passedID ?? "") {
                 self.latestResults = latestResults
                 DispatchQueue.main.async {
                     self.latestResultsCollectionView.reloadData()
@@ -49,7 +49,6 @@ extension LatestResultsTableViewCell: UICollectionViewDelegate {
 
 extension LatestResultsTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(latestResults.count)
         return latestResults.count
     }
     
@@ -84,7 +83,7 @@ extension LatestResultsTableViewCell: UICollectionViewDelegateFlowLayout {
         let numberOfItemsPerRow: CGFloat = 2.0
     
         let width = (collectionView.frame.width-leftAndRightPaddings)/numberOfItemsPerRow
-        return CGSize(width: 240, height: 120) // You can change width and height here as pr your requirement
+        return CGSize(width: width, height: 150) // You can change width and height here as pr your requirement
     
     }
 }

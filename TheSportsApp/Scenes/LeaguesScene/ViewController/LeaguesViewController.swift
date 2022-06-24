@@ -10,7 +10,7 @@ import UIKit
 class LeaguesViewController: UIViewController {
 
     
-    var leagueNames :String?
+    var sportName :String?
     var leagues = [LeaguesModel]()
     let leaguesViewModel = LeaguesViewModel()
     var league: SportsModel?
@@ -31,7 +31,7 @@ class LeaguesViewController: UIViewController {
     
     func fetch() {
         Task.init {
-            if let leagues = await leaguesViewModel.fetchLeagues(sportName: leagueNames ?? "") {
+            if let leagues = await leaguesViewModel.fetchLeagues(sportName: sportName ?? "") {
                 self.leagues = leagues
                 DispatchQueue.main.async {
                     self.leaguesTableView.reloadData()
@@ -53,7 +53,8 @@ extension LeaguesViewController: UITableViewDelegate {
         let vc = UIStoryboard(name: "LeagueDetailsStoryBoard", bundle: .main).instantiateViewController(withIdentifier: "LeagueDetailsViewController") as! LeagueDetailsViewController
         vc.modalPresentationStyle = .fullScreen
         vc.leagueDetails = data
-        vc.leagueID = leagues[indexPath.row].strLeague!
+        vc.leagueID = leagues[indexPath.row].idLeague
+        passedID = leagues[indexPath.row].idLeague
         self.present(vc, animated: true)
     }
 }
@@ -93,8 +94,9 @@ extension LeaguesViewController: UITableViewDataSource {
 extension LeaguesViewController: TableViewNew {
     func onClickCell(index: Int) {
         print("the index is: \(index)")
-        if let youtubeURL = URL(string: "https://\(leagues[index].strYoutube)") {
+        if let youtubeURL = URL(string: "https://\(leagues[index].strYoutube!)") {
             UIApplication.shared.open(youtubeURL)
+            
         }
     }
 }

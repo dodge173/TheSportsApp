@@ -10,6 +10,7 @@ import UIKit
 protocol TableViewNew {
     func onClickCell(index: Int)
 }
+
 class LeaguesTableViewCell: UITableViewCell {
 
     var cellDelegate: TableViewNew?

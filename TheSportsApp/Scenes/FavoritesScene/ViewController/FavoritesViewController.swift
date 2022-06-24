@@ -8,7 +8,8 @@
 import UIKit
 
 class FavoritesViewController: UIViewController {
-
+    
+    let alert : UIAlertController = UIAlertController(title:"You Are Disconnected!" , message: "Please Connect to Network", preferredStyle: .alert)
     var favoritesModel = [Favorites]()
     @IBOutlet weak var favoritesTableView: UITableView!
     
@@ -16,11 +17,13 @@ class FavoritesViewController: UIViewController {
         super.viewDidLoad()
         favoritesTableView.register(UINib(nibName: "LeaguesTableViewCell", bundle: .main), forCellReuseIdentifier: "LeaguesTableViewCell")
         fetchFavorites()
+        netMonitorAlert()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fetchFavorites()
+        
     }
     
     func fetchFavorites() {
@@ -31,11 +34,23 @@ class FavoritesViewController: UIViewController {
             }
         }
     }
+    
+    func netMonitorAlert() {
+        if NetworkMonitor.shared.isConnected  {
+            print("you are connected")
+            //loadingIndicator.isHidden = true
+        } else {
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { alertAction in
+                
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
 }
 extension FavoritesViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       
+        
         favoritesTableView.deselectRow(at: indexPath, animated: true)
         
         let vc = UIStoryboard(name: "LeagueDetailsStoryBoard", bundle: .main).instantiateViewController(withIdentifier: "LeagueDetailsViewController") as! LeagueDetailsViewController
@@ -52,7 +67,7 @@ extension FavoritesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         favoritesModel.count
     }
-   
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = favoritesTableView.dequeueReusableCell(withIdentifier: "LeaguesTableViewCell", for: indexPath) as! LeaguesTableViewCell
@@ -120,6 +135,7 @@ extension FavoritesViewController: UITableViewDataSource {
     func openInSafari (indexPath: IndexPath) {
         
     }
+    
     func shareUser (indexPath: IndexPath) {
         let usersURL = favoritesModel[indexPath.row].leagueName
         let sheetVC = UIActivityViewController(activityItems: [usersURL], applicationActivities: nil)

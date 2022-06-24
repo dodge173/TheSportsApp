@@ -10,7 +10,7 @@ import CoreData
 
 class LeagueDetailsViewController: UIViewController {
     
-    var leagueID : String = ""
+    var leagueID: String?
     var leagueDetails: LeaguesModel?
     var leagueDetailsViewModel = LeagueDetailsViewModel()
     var upcomingevents = [Favorites]()
@@ -59,7 +59,6 @@ class LeagueDetailsViewController: UIViewController {
             favoriteBtn.setImage(UIImage(systemName: "bookmarkr"), for: .normal)
         }
     }
-    
     
     @objc func presentVC(_ sender: UITapGestureRecognizer? = nil) {
         

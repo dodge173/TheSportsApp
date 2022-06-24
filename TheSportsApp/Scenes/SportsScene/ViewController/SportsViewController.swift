@@ -22,7 +22,7 @@ class SportsViewController: UIViewController {
         sportsCollectionView.register(UINib(nibName: "SportsCollectionViewCell", bundle: .main), forCellWithReuseIdentifier: "SportsCollectionViewCell")
         // Do any additional setup after loading the view.
         fetch()
-    
+        
     }
     
     func fetch() {
@@ -36,8 +36,8 @@ class SportsViewController: UIViewController {
                 print("error")
             }
         }
-     }
-  }
+    }
+}
 
 extension SportsViewController: UICollectionViewDelegate {
     
@@ -46,7 +46,7 @@ extension SportsViewController: UICollectionViewDelegate {
         let sport = sports[indexPath.row]
         let vc = UIStoryboard(name: "LeaguesStoryboard", bundle: .main).instantiateViewController(withIdentifier: "LeaguesViewController") as! LeaguesViewController
         vc.league = sport
-        vc.leagueNames = sports[indexPath.row].strSport
+        vc.sportName = sports[indexPath.row].strSport
         collectionView.deselectItem(at: indexPath, animated: true)
         self.navigationController?.pushViewController(vc, animated: true)
         
@@ -79,20 +79,20 @@ extension SportsViewController: UICollectionViewDataSource {
         return 1
     }
     
-   
+    
 }
 
 extension SportsViewController: UICollectionViewDelegateFlowLayout {
     
- 
-
+    
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
     {
         let leftAndRightPaddings: CGFloat = 1
         let numberOfItemsPerRow: CGFloat = 2.0
-    
+        
         let width = (collectionView.frame.width-leftAndRightPaddings)/numberOfItemsPerRow
         return CGSize(width: width, height: width) // You can change width and height here as pr your requirement
-    
+        
     }
 }

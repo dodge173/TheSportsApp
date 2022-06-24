@@ -17,9 +17,13 @@
                 <rect key="frame" x="0.0" y="0.0" width="556" height="174"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kPE-Vw-0z5">
-                        <rect key="frame" x="20" y="78.5" width="150" height="17"/>
-                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kPE-Vw-0z5">
+                        <rect key="frame" x="20" y="57" width="135" height="51"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="135" id="gqF-fg-D09"/>
+                            <constraint firstAttribute="height" constant="51" id="kEI-mC-m2V"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -48,13 +52,13 @@
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="kPE-Vw-0z5" firstAttribute="centerY" secondItem="PMa-d3-Br8" secondAttribute="centerY" constant="4.5" id="8mO-KV-dQp"/>
+                    <constraint firstItem="PMa-d3-Br8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="kPE-Vw-0z5" secondAttribute="trailing" constant="20" id="8nb-RM-di4"/>
                     <constraint firstItem="5ac-Oc-TYt" firstAttribute="centerY" secondItem="PMa-d3-Br8" secondAttribute="centerY" constant="4.5" id="9OF-oP-YwP"/>
                     <constraint firstAttribute="trailing" secondItem="5ac-Oc-TYt" secondAttribute="trailing" constant="49" id="Bnn-Cd-o4Y"/>
-                    <constraint firstItem="kPE-Vw-0z5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="Eo9-l9-Inh"/>
                     <constraint firstItem="PMa-d3-Br8" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="IvK-Qc-Che"/>
                     <constraint firstItem="PMa-d3-Br8" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" constant="-4.5" id="NYY-1G-PR5"/>
-                    <constraint firstItem="PMa-d3-Br8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="kPE-Vw-0z5" secondAttribute="trailing" constant="30" id="V43-1D-4Dx"/>
+                    <constraint firstItem="kPE-Vw-0z5" firstAttribute="baseline" secondItem="5ac-Oc-TYt" secondAttribute="baseline" constant="12.5" id="d9m-PM-GAT"/>
+                    <constraint firstItem="kPE-Vw-0z5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="z0d-nU-gJ7"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -62,7 +66,7 @@
                 <outlet property="strBadge" destination="PMa-d3-Br8" id="3PD-Iw-DNu"/>
                 <outlet property="strLeague" destination="kPE-Vw-0z5" id="yja-2g-kLe"/>
             </connections>
-            <point key="canvasLocation" x="148" y="-24"/>
+            <point key="canvasLocation" x="147.82608695652175" y="-24.107142857142858"/>
         </tableViewCell>
     </objects>
     <resources>
