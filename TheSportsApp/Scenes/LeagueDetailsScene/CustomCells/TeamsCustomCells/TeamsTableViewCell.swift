@@ -12,6 +12,7 @@ class TeamsTableViewCell: UITableViewCell {
     @IBOutlet weak var teamsCollectionView: UICollectionView!
     let leagueDetailsViewModel = LeagueDetailsViewModel()
     var teams = [TeamsModel]()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -46,8 +47,6 @@ class TeamsTableViewCell: UITableViewCell {
 extension TeamsTableViewCell: UICollectionViewDelegate {
     
    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-
    }
     
 }
@@ -60,9 +59,11 @@ extension TeamsTableViewCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = teamsCollectionView.dequeueReusableCell(withReuseIdentifier: "TeamsCollectionViewCell", for: indexPath) as!  TeamsCollectionViewCell
-        
-      //  cell.teamImage.image=
         cell.teamNameLabel.text = teams[indexPath.row].strTeam
+        cell.teamImage.downloaded(from: teams[indexPath.row].strTeamBadge ?? "")
+        cell.teamImage.layer.masksToBounds = true
+        cell.teamImage.layer.cornerRadius =  cell.teamImage.frame.height/2
+        cell.teamImage.clipsToBounds = true
         return cell
     }
     
@@ -71,7 +72,7 @@ extension TeamsTableViewCell: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 5
+        return 1
     }
     
 }
@@ -80,11 +81,11 @@ extension TeamsTableViewCell: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
     {
-        let leftAndRightPaddings: CGFloat = 3
+        let leftAndRightPaddings: CGFloat = 1
         let numberOfItemsPerRow: CGFloat = 2.0
     
         let width = (collectionView.frame.width-leftAndRightPaddings)/numberOfItemsPerRow
-        return CGSize(width: width, height: width) // You can change width and height here as pr your requirement
+        return CGSize(width: width, height: 150) // You can change width and height here as pr your requirement
     
     }
 }

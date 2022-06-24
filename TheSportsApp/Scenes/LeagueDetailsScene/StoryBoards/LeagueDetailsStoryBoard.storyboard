@@ -17,11 +17,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="sVk-bA-SIA">
-                                <rect key="frame" x="0.0" y="133" width="414" height="729"/>
+                                <rect key="frame" x="0.0" y="148" width="414" height="714"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JTl-sK-zX1">
-                                <rect key="frame" x="347" y="42" width="28" height="31"/>
+                                <rect key="frame" x="347" y="41" width="47" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title=" "/>
@@ -30,37 +30,33 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="League Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FbY-64-eqH">
-                                <rect key="frame" x="95" y="41" width="224" height="32"/>
+                                <rect key="frame" x="95" y="41" width="224" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3XT-gF-DGS">
+                                <rect key="frame" x="15" y="98" width="56" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Back"/>
+                                <connections>
+                                    <action selector="BackBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="HJx-xJ-X61"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="sVk-bA-SIA" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="45" id="Fzu-Rb-HAT"/>
+                            <constraint firstItem="3XT-gF-DGS" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="Fh1-hi-Kze"/>
+                            <constraint firstItem="sVk-bA-SIA" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="60" id="Fzu-Rb-HAT"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="sVk-bA-SIA" secondAttribute="bottom" id="JV3-Tl-H30"/>
                             <constraint firstItem="sVk-bA-SIA" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Orp-TL-YHX"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="sVk-bA-SIA" secondAttribute="trailing" id="Y6d-gq-DGf"/>
+                            <constraint firstItem="3XT-gF-DGS" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="15" id="zU6-mk-CjY"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="cib-p2-KKF">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="vK7-R9-ywd">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="9Jo-zB-0KS">
-                                <rect key="frame" x="20" y="5.5" width="41" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemGray2Color"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Back"/>
-                                <connections>
-                                    <action selector="BackBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="U4U-as-naR"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="cib-p2-KKF"/>
                     <connections>
                         <outlet property="favoriteBtn" destination="JTl-sK-zX1" id="i9X-3T-OfM"/>
                         <outlet property="leagueDetailsTableView" destination="sVk-bA-SIA" id="1Ih-6I-jM7"/>
@@ -69,7 +65,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1115.9420289855072" y="49.553571428571423"/>
+            <point key="canvasLocation" x="1114.4927536231885" y="49.553571428571423"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DFr-l1-wND">
@@ -93,9 +89,6 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

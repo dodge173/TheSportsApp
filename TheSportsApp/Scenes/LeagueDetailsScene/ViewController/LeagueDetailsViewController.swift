@@ -10,7 +10,7 @@ import CoreData
 
 class LeagueDetailsViewController: UIViewController {
     
-    var leagueID: String?
+    var leagueID : String = ""
     var leagueDetails: LeaguesModel?
     var leagueDetailsViewModel = LeagueDetailsViewModel()
     var upcomingevents = [Favorites]()
@@ -25,17 +25,19 @@ class LeagueDetailsViewController: UIViewController {
     @IBOutlet weak var leaguename: UILabel!
     @IBAction func favoriteBtn(_ sender: UIButton) {
         
-        if Favorites(context: context).leagueName != leagueDetails?.strLeague  {
-            Favorites(context: self.context).leagueName = leagueDetails?.strLeague
+        // if Favorites(context: context).leagueName != leagueDetails?.strLeague  {
+        Favorites(context: self.context).leagueName = leagueDetails?.strLeague ?? ""
+        Favorites(context: self.context).leagueBadge = leagueDetails?.strBadge ?? ""
+        Favorites(context: self.context).leagueYoutube = leagueDetails?.strYoutube ?? ""
             do {
                 try self.context.save()
                 favoriteBtn.setImage(UIImage(systemName: "bookmark.fill"), for: .normal)
             } catch {
                 print("Error")
             }
-        } else if Favorites(context: context).leagueName == leaguename.text {
+      //  } else if Favorites(context: context).leagueName == leaguename.text {
             favoriteBtn.setImage(UIImage(systemName: "bookmarkr"), for: .normal)
-        }
+    //    }
     }
     
     override func viewDidLoad() {
@@ -70,9 +72,8 @@ class LeagueDetailsViewController: UIViewController {
 extension LeagueDetailsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         leagueDetailsTableView.deselectRow(at: indexPath, animated: true)
-        
-        
     }
+    
 }
 
 extension LeagueDetailsViewController: UITableViewDataSource {

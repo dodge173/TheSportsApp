@@ -10,31 +10,31 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LeaguesTableViewCell" rowHeight="163" id="KGk-i7-Jjw" customClass="LeaguesTableViewCell" customModule="TheSportsApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="556" height="163"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LeaguesTableViewCell" rowHeight="174" id="KGk-i7-Jjw" customClass="LeaguesTableViewCell" customModule="TheSportsApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="556" height="174"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="556" height="163"/>
+                <rect key="frame" x="0.0" y="0.0" width="556" height="174"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kPE-Vw-0z5">
-                        <rect key="frame" x="30" y="78.5" width="178" height="17"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="178" id="kOJ-LE-28k"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" name="KohinoorBangla-Semibold" family="Kohinoor Bangla" pointSize="12"/>
-                        <color key="textColor" systemColor="linkColor"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kPE-Vw-0z5">
+                        <rect key="frame" x="20" y="78.5" width="150" height="17"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pencil.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="PMa-d3-Br8">
-                        <rect key="frame" x="253" y="64.5" width="45" height="45"/>
+                        <rect key="frame" x="248" y="57.5" width="60" height="50"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="46" id="6Oi-3T-9pF"/>
-                            <constraint firstAttribute="width" constant="45" id="zn2-57-1x2"/>
+                            <constraint firstAttribute="width" constant="60" id="U9d-6K-LtL"/>
+                            <constraint firstAttribute="height" constant="51" id="fES-Jp-HK0"/>
                         </constraints>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ac-Oc-TYt">
-                        <rect key="frame" x="450" y="31" width="40.5" height="112"/>
+                        <rect key="frame" x="457" y="71.5" width="50" height="31"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="mLa-Dg-P6S"/>
+                        </constraints>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" image="play" catalog="system">
                             <backgroundConfiguration key="background">
@@ -48,14 +48,13 @@
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="PMa-d3-Br8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="kPE-Vw-0z5" secondAttribute="trailing" constant="30" id="3bc-m4-h8m"/>
-                    <constraint firstItem="PMa-d3-Br8" firstAttribute="centerY" secondItem="kPE-Vw-0z5" secondAttribute="centerY" id="Iht-mx-08w"/>
-                    <constraint firstItem="PMa-d3-Br8" firstAttribute="centerY" secondItem="5ac-Oc-TYt" secondAttribute="centerY" id="YzU-Xa-1k3"/>
-                    <constraint firstItem="PMa-d3-Br8" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" constant="-2.5" id="dfo-5A-fid"/>
-                    <constraint firstItem="5ac-Oc-TYt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="20" id="gAR-su-hOy"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="5ac-Oc-TYt" secondAttribute="trailing" constant="45.5" id="iC7-Uo-CWK"/>
-                    <constraint firstAttribute="bottom" secondItem="5ac-Oc-TYt" secondAttribute="bottom" constant="20" id="qll-hV-9R5"/>
-                    <constraint firstItem="kPE-Vw-0z5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="twh-8g-Pil"/>
+                    <constraint firstItem="kPE-Vw-0z5" firstAttribute="centerY" secondItem="PMa-d3-Br8" secondAttribute="centerY" constant="4.5" id="8mO-KV-dQp"/>
+                    <constraint firstItem="5ac-Oc-TYt" firstAttribute="centerY" secondItem="PMa-d3-Br8" secondAttribute="centerY" constant="4.5" id="9OF-oP-YwP"/>
+                    <constraint firstAttribute="trailing" secondItem="5ac-Oc-TYt" secondAttribute="trailing" constant="49" id="Bnn-Cd-o4Y"/>
+                    <constraint firstItem="kPE-Vw-0z5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="Eo9-l9-Inh"/>
+                    <constraint firstItem="PMa-d3-Br8" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="IvK-Qc-Che"/>
+                    <constraint firstItem="PMa-d3-Br8" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" constant="-4.5" id="NYY-1G-PR5"/>
+                    <constraint firstItem="PMa-d3-Br8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="kPE-Vw-0z5" secondAttribute="trailing" constant="30" id="V43-1D-4Dx"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -63,15 +62,12 @@
                 <outlet property="strBadge" destination="PMa-d3-Br8" id="3PD-Iw-DNu"/>
                 <outlet property="strLeague" destination="kPE-Vw-0z5" id="yja-2g-kLe"/>
             </connections>
-            <point key="canvasLocation" x="244.92753623188409" y="-2.34375"/>
+            <point key="canvasLocation" x="148" y="-24"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="pencil.circle.fill" catalog="system" width="128" height="121"/>
         <image name="play" catalog="system" width="120" height="128"/>
-        <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

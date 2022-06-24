@@ -9,9 +9,10 @@ import UIKit
 
 class TeamsCollectionViewCell: UICollectionViewCell {
 
-    var delegate: TeamDetailsDelegate?
+
     @IBOutlet weak var teamNameLabel: UILabel!
     @IBOutlet weak var teamImage: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -28,9 +29,6 @@ class TeamsCollectionViewCell: UICollectionViewCell {
     }
 }
 
-protocol TeamDetailsDelegate {
-    func presentDetailsViewController (cell: UICollectionViewCell)
-}
 class GlobalNotificationCenter {
     let nc = NotificationCenter.default
 }

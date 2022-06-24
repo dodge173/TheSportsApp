@@ -14,7 +14,12 @@ class FavoritesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        favoritesTableView.register(UINib(nibName: "LeaguesTableViewCell", bundle: .main), forCellReuseIdentifier: "LeaguesTableViewCell")
+        fetchFavorites()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         fetchFavorites()
     }
     
@@ -27,11 +32,15 @@ class FavoritesViewController: UIViewController {
         }
     }
 }
-
 extension FavoritesViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       
         favoritesTableView.deselectRow(at: indexPath, animated: true)
+        
+        let vc = UIStoryboard(name: "LeagueDetailsStoryBoard", bundle: .main).instantiateViewController(withIdentifier: "LeagueDetailsViewController") as! LeagueDetailsViewController
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true)
     }
 }
 
@@ -45,10 +54,22 @@ extension FavoritesViewController: UITableViewDataSource {
     }
    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = favoritesTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = favoritesModel[indexPath.row].leagueName
-        print(favoritesModel)
+        
+        let cell = favoritesTableView.dequeueReusableCell(withIdentifier: "LeaguesTableViewCell", for: indexPath) as! LeaguesTableViewCell
+        
+        cell.strLeague.text = favoritesModel[indexPath.row].leagueName
+        cell.strBadge.downloaded(from: favoritesModel[indexPath.row].leagueBadge ?? "")
+        cell.strBadge.layer.masksToBounds = true
+        cell.strBadge.layer.cornerRadius =  cell.strBadge.frame.height/2
+        cell.strBadge.clipsToBounds = true
+        
+        
+        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        80
     }
     
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {

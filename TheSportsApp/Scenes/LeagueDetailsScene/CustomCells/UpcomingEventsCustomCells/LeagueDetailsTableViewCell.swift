@@ -31,7 +31,7 @@ class LeagueDetailsTableViewCell: UITableViewCell {
     
     func fetch() {
         Task.init {
-            if let upcomingEvents = await leagueDetailsViewModel.fetchUpcomingEvents(leagueID: leagueDetailsDelegate.leagueID ?? "")
+            if let upcomingEvents = await leagueDetailsViewModel.fetchUpcomingEvents()
             {
                 self.upcomingEvents = upcomingEvents
                 DispatchQueue.main.async {
@@ -51,7 +51,6 @@ extension LeagueDetailsTableViewCell: UICollectionViewDelegate {
 
 extension LeagueDetailsTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-       // print(upcomingEvents.count)
         return upcomingEvents.count
     }
     

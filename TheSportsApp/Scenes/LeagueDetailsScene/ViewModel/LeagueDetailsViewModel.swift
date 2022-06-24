@@ -16,13 +16,13 @@ class LeagueDetailsViewModel {
         self.apiService = apiService
     }
     
-    func fetchUpcomingEvents(leagueID: String) async -> [UpcomingEventsModel]? {
-        let upcomingEvents = try? await apiService.fetch(endPoint: "api/v1/json/2/eventsseason.php?id=\(leagueID)", SportsAppModel: UpcomingEvents.self)
+    func fetchUpcomingEvents() async -> [UpcomingEventsModel]? {
+        let upcomingEvents = try? await apiService.fetch(endPoint: "api/v1/json/2/eventsseason.php?id=5107", SportsAppModel: UpcomingEvents.self)
         return upcomingEvents?.events
         }
     
     func fetchLatestResults() async -> [LatestResultsModel]? {
-        let latestResults = try? await apiService.fetch(endPoint: "api/v1/json/2/eventsseason.php?id=4617", SportsAppModel: LatestResults.self)
+        let latestResults = try? await apiService.fetch(endPoint: "api/v1/json/2/eventsseason.php?id=5107", SportsAppModel: LatestResults.self)
         return latestResults?.events
     }
     

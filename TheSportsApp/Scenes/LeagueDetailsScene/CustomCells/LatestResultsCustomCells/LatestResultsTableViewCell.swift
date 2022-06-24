@@ -9,6 +9,7 @@ import UIKit
 
 class LatestResultsTableViewCell: UITableViewCell {
 
+    var leagueDetailsDelegate = LeagueDetailsViewController()
     let leagueDetailsViewModel = LeagueDetailsViewModel()
     @IBOutlet weak var latestResultsCollectionView: UICollectionView!
     var latestResults = [LatestResultsModel]()
@@ -70,7 +71,7 @@ extension LatestResultsTableViewCell: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 5
+        return 10
     }
     
 }
@@ -83,7 +84,7 @@ extension LatestResultsTableViewCell: UICollectionViewDelegateFlowLayout {
         let numberOfItemsPerRow: CGFloat = 2.0
     
         let width = (collectionView.frame.width-leftAndRightPaddings)/numberOfItemsPerRow
-        return CGSize(width: width, height: width) // You can change width and height here as pr your requirement
+        return CGSize(width: 240, height: 120) // You can change width and height here as pr your requirement
     
     }
 }

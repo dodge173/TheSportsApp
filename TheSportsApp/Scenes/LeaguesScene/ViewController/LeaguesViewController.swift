@@ -14,7 +14,7 @@ class LeaguesViewController: UIViewController {
     var leagues = [LeaguesModel]()
     let leaguesViewModel = LeaguesViewModel()
     var league: SportsModel?
-    var leagueArray = [LeaguesModel]()
+  //  var leagueArray = [LeaguesModel]()
     
     
     @IBOutlet weak var leaguesTableView: UITableView!
@@ -26,6 +26,7 @@ class LeaguesViewController: UIViewController {
         leaguesTableView.register(UINib(nibName: "LeaguesTableViewCell", bundle: .main), forCellReuseIdentifier: "LeaguesTableViewCell")
         // Do any additional setup after loading the view.
         fetch()
+        
     }
     
     func fetch() {
@@ -52,7 +53,7 @@ extension LeaguesViewController: UITableViewDelegate {
         let vc = UIStoryboard(name: "LeagueDetailsStoryBoard", bundle: .main).instantiateViewController(withIdentifier: "LeagueDetailsViewController") as! LeagueDetailsViewController
         vc.modalPresentationStyle = .fullScreen
         vc.leagueDetails = data
-        vc.leagueID = leagues[indexPath.row].idLeague
+        vc.leagueID = leagues[indexPath.row].strLeague!
         self.present(vc, animated: true)
     }
 }
@@ -65,12 +66,16 @@ extension LeaguesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = leaguesTableView.dequeueReusableCell(withIdentifier: "LeaguesTableViewCell", for: indexPath)   as! LeaguesTableViewCell
         cell.strLeague.text = leagues[indexPath.row].strLeague
-        
-        
+        cell.strBadge.downloaded(from: leagues[indexPath.row].strBadge ?? "")
+        cell.strBadge.layer.masksToBounds = true
+        cell.strBadge.layer.cornerRadius =  cell.strBadge.frame.height/2
+        cell.strBadge.clipsToBounds = true
+        cell.cellDelegate = self
+        cell.index = indexPath
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 70
+        return 100
     }
     
    // override func viewDidAppear(_ animated: Bool) {
@@ -83,4 +88,13 @@ extension LeaguesViewController: UITableViewDataSource {
        
    // }
   
+}
+
+extension LeaguesViewController: TableViewNew {
+    func onClickCell(index: Int) {
+        print("the index is: \(index)")
+        if let youtubeURL = URL(string: "https://\(leagues[index].strYoutube)") {
+            UIApplication.shared.open(youtubeURL)
+        }
+    }
 }

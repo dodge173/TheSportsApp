@@ -19,7 +19,6 @@ class LeaguesViewModel {
         let leagues = try? await apiService.fetch(endPoint: "api/v1/json/2/search_all_leagues.php?s=\(sportName)", SportsAppModel: Leagues.self)
         return leagues?.countries
     }
-    
 }
 
 

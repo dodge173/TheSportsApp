@@ -52,6 +52,7 @@
 		9BB0711A28649BE9009D3F62 /* TeamDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB0711928649BE9009D3F62 /* TeamDetailsViewController.swift */; };
 		9BB0711C28649C04009D3F62 /* TeamDetailsStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BB0711B28649C04009D3F62 /* TeamDetailsStoryBoard.storyboard */; };
 		9BB0711E28649CF2009D3F62 /* TeamDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB0711D28649CF2009D3F62 /* TeamDetailsModel.swift */; };
+		9BDDEB7928663151004B3056 /* TeamDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDDEB7828663151004B3056 /* TeamDetailsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +103,7 @@
 		9BB0711928649BE9009D3F62 /* TeamDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailsViewController.swift; sourceTree = "<group>"; };
 		9BB0711B28649C04009D3F62 /* TeamDetailsStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TeamDetailsStoryBoard.storyboard; sourceTree = "<group>"; };
 		9BB0711D28649CF2009D3F62 /* TeamDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailsModel.swift; sourceTree = "<group>"; };
+		9BDDEB7828663151004B3056 /* TeamDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +220,7 @@
 				9BB0710328649288009D3F62 /* ViewController */,
 				9BB071022864927C009D3F62 /* ViewModel */,
 				9BB071002864926C009D3F62 /* StoryBoards */,
+				9BB0710128649274009D3F62 /* CustomCell */,
 			);
 			path = LeaguesScene;
 			sourceTree = "<group>";
@@ -344,7 +347,6 @@
 		9BB0710D286493FA009D3F62 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				9BB0710128649274009D3F62 /* CustomCell */,
 				9B783CCE285F927B00F9A544 /* SportsModel.swift */,
 				9B4EBD4E2860F75A00443900 /* LeaguesModel.swift */,
 				9BA8C1812863282300E0870D /* UpcomingEventsModel.swift */,
@@ -436,6 +438,7 @@
 		9BB0711728649B06009D3F62 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				9BDDEB7828663151004B3056 /* TeamDetailsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -544,6 +547,7 @@
 				9B783CCF285F927B00F9A544 /* SportsModel.swift in Sources */,
 				9BA8C186286328C600E0870D /* TeamsModel.swift in Sources */,
 				9B783CCA285F80C000F9A544 /* SportsCollectionViewCell.swift in Sources */,
+				9BDDEB7928663151004B3056 /* TeamDetailsViewModel.swift in Sources */,
 				9B4EBD4F2860F75B00443900 /* LeaguesModel.swift in Sources */,
 				9B4EBD472860EA5E00443900 /* LeaguesViewController.swift in Sources */,
 				9B8AC2A12862711A00FEC2AD /* LatestResultsTableViewCell.swift in Sources */,

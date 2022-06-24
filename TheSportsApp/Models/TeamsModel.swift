@@ -15,5 +15,5 @@ struct Teams: Codable {
 
 struct TeamsModel : Codable {
     
-    let strTeamBadge, strTeam: String
+    let strTeamBadge, strTeam: String?
 }

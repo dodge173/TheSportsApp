@@ -11,6 +11,10 @@ class TeamDetailsViewController: UIViewController {
 
     var teamDetails : TeamsModel?
     
+    @IBAction func backToLeagueDetailsBtn(_ sender: UIButton) {
+        dismiss(animated: true)
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -9,9 +9,9 @@ import Foundation
 
 
 struct UpcomingEvents: Codable {
-    let events : [UpcomingEventsModel]
+    let events: [UpcomingEventsModel]
 }
 // MARK: - League
 struct UpcomingEventsModel: Codable {
-    let strEvent, strTime, dateEvent: String
+    let strEvent, strTime, dateEvent: String?
 }

@@ -15,10 +15,10 @@ struct Leagues: Codable {
 
 struct LeaguesModel: Codable {
     
-    let strLeague: String
-    let strSport: String
-    let idLeague: String
-    let strBadge: String
-    let strYoutube: String
+    let strLeague: String?
+    let strSport: String?
+    let idLeague: String?
+    let strBadge: String?
+    let strYoutube: String?
 }
 

@@ -15,6 +15,6 @@ struct LatestResults: Codable {
 
 
 struct LatestResultsModel: Codable {
-    let strHomeTeam, strAwayTeam, strTime, dateEvent, intHomeScore, intAwayScore: String
+    let strHomeTeam, strAwayTeam, strTime, dateEvent, intHomeScore, intAwayScore: String?
 }
 
