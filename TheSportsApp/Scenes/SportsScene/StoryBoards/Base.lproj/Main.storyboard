@@ -18,8 +18,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jiU-6D-DEd">
-                                <rect key="frame" x="10" y="150" width="394" height="653"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="0.09736394557823129" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="AIh-j9-xsh">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -32,10 +32,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="jiU-6D-DEd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="DiX-dm-0w8"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jiU-6D-DEd" secondAttribute="trailing" constant="10" id="PFA-sA-GtK"/>
-                            <constraint firstItem="jiU-6D-DEd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="QwU-H5-oKv"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jiU-6D-DEd" secondAttribute="bottom" constant="10" id="sMz-Je-bBo"/>
+                            <constraint firstItem="jiU-6D-DEd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="DiX-dm-0w8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jiU-6D-DEd" secondAttribute="trailing" id="PFA-sA-GtK"/>
+                            <constraint firstItem="jiU-6D-DEd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="QwU-H5-oKv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jiU-6D-DEd" secondAttribute="bottom" id="sMz-Je-bBo"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Sports" id="nBV-VC-K5Q"/>
@@ -73,9 +73,7 @@
                             <constraint firstItem="D3P-cu-9Nk" firstAttribute="top" secondItem="9Fu-sD-STt" secondAttribute="top" id="pG2-zh-Tiq"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="mhY-gG-vmW">
-                        <color key="badgeColor" systemColor="labelColor"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="mhY-gG-vmW"/>
                     <navigationItem key="navigationItem" id="vp9-oy-b0r"/>
                     <connections>
                         <outlet property="favoritesTableView" destination="D3P-cu-9Nk" id="DTT-pm-Zwv"/>
@@ -93,7 +91,6 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="QCr-UZ-fGF">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="eFn-Uu-Yvh" kind="relationship" relationship="viewControllers" id="oJp-lP-xvO"/>
@@ -111,12 +108,12 @@
                     <tabBarItem key="tabBarItem" title="Sports" id="Lyi-Mx-8Mv">
                         <imageReference key="image" image="sportscourt" catalog="system" symbolScale="large"/>
                         <imageReference key="landscapeImage" image="target" catalog="system" symbolScale="large" renderingMode="hierarchical-single"/>
-                        <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="ags-j8-sTg">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="0.10145620748299319" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -131,9 +128,6 @@
     <resources>
         <image name="sportscourt" catalog="system" width="128" height="84"/>
         <image name="target" catalog="system" width="128" height="121"/>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

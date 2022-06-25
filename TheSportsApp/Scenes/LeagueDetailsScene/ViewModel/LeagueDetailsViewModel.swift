@@ -27,7 +27,7 @@ class LeagueDetailsViewModel {
     }
     
     func fetchTeams() async -> [TeamsModel]? {
-        let teams = try? await apiService.fetch(endPoint: "api/v1/json/2/search_all_teams.php?l=", SportsAppModel: Teams.self)
+        let teams = try? await apiService.fetch(endPoint: "api/v1/json/2/search_all_teams.php?l=English%20Premier%20League", SportsAppModel: Teams.self)
         return teams?.teams
     }
     

@@ -54,7 +54,6 @@
 		9BB0711E28649CF2009D3F62 /* TeamDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB0711D28649CF2009D3F62 /* TeamDetailsModel.swift */; };
 		9BDDEB7928663151004B3056 /* TeamDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDDEB7828663151004B3056 /* TeamDetailsViewModel.swift */; };
 		9BDDEB7E28665539004B3056 /* NetworkingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDDEB7D28665539004B3056 /* NetworkingIndicator.swift */; };
-		9BDDEB8028666F2F004B3056 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDDEB7F28666F2F004B3056 /* AppManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -107,7 +106,6 @@
 		9BB0711D28649CF2009D3F62 /* TeamDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailsModel.swift; sourceTree = "<group>"; };
 		9BDDEB7828663151004B3056 /* TeamDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailsViewModel.swift; sourceTree = "<group>"; };
 		9BDDEB7D28665539004B3056 /* NetworkingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingIndicator.swift; sourceTree = "<group>"; };
-		9BDDEB7F28666F2F004B3056 /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,7 +146,6 @@
 				9BB0710E28649432009D3F62 /* Utilities */,
 				9BB0710C286493E7009D3F62 /* Assets */,
 				9B783CBE285F71D400F9A544 /* Info.plist */,
-				9BDDEB7F28666F2F004B3056 /* AppManager.swift */,
 			);
 			path = TheSportsApp;
 			sourceTree = "<group>";
@@ -550,7 +547,6 @@
 				9B4EBD452860D22B00443900 /* ImageViewExtensions.swift in Sources */,
 				9BA8C184286328B100E0870D /* LatestResultsModels.swift in Sources */,
 				9B4EBD512860F76900443900 /* LeaguesViewModel.swift in Sources */,
-				9BDDEB8028666F2F004B3056 /* AppManager.swift in Sources */,
 				9B783CCF285F927B00F9A544 /* SportsModel.swift in Sources */,
 				9BA8C186286328C600E0870D /* TeamsModel.swift in Sources */,
 				9B783CCA285F80C000F9A544 /* SportsCollectionViewCell.swift in Sources */,

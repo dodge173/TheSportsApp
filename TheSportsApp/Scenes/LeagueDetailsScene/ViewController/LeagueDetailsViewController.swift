@@ -9,13 +9,11 @@ import UIKit
 import CoreData
 
 class LeagueDetailsViewController: UIViewController {
-    
     var leagueID: String?
     var leagueDetails: LeaguesModel?
     var leagueDetailsViewModel = LeagueDetailsViewModel()
     var upcomingevents = [Favorites]()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    
     @IBAction func BackBtn(_ sender: UIButton) {
         dismiss(animated: true)
     }
